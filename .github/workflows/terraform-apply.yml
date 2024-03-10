@@ -2,7 +2,9 @@
   name: Plan
   
   on:
-    pull_request:
+    push:
+      branches:
+        - main
   
   permissions:
     contents: read # Required for checking out the repository
@@ -23,7 +25,7 @@
               .github/workflows/**.yml
               **.tf
   
-        - name: Run Terraform Plan
+        - name: Run Terraform Apply
           if: steps.changed-files.outputs.any_changed == 'true'
           uses: ./.github/actions/terraform
           env:
@@ -31,5 +33,6 @@
             TF_IN_AUTOMATION: true
           with:
             aws-region: ap-northeast-1
-            terraform-command: plan
+            terraform-arguments: --auto-approve
+            terraform-command: apply
             pd-token: ${{ secrets.PD_TOKEN }}
