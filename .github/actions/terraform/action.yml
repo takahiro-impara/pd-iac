@@ -22,10 +22,10 @@ inputs:
 runs:
   using: composite
   steps:
-  - uses: aws-actions/configure-aws-credentials@v4
-    with:
-      role-to-assume: arn:aws:iam::896640906341:role/github-actions
-      aws-region: ${{ inputs.aws-region }}
+    - uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::896640906341:role/github-actions
+        aws-region: ${{ inputs.aws-region }}
 
     - uses: hashicorp/setup-terraform@v2
       with:
@@ -46,5 +46,7 @@ runs:
         filter_mode: nofilter
         reporter: github-pr-review
 
-    - run: tfcmt ${{ inputs.terraform-command }} -- terraform ${{ inputs.terraform-command }} -var pagerduty_token=${{ secrets.PD_TOKEN }} -input=false ${{ inputs.terraform-arguments }}
+    - env: 
+        PD_TOKEN: ${{ secrets.PD_TOKEN }}
+      run: tfcmt ${{ inputs.terraform-command }} -- terraform ${{ inputs.terraform-command }} -var pagerduty_token=$PD_TOKEN -input=false ${{ inputs.terraform-arguments }}
       shell: bash
