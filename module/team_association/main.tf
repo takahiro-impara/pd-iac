@@ -1,5 +1,5 @@
 resource "pagerduty_team_membership" "team_membership" {
-  for_each = toset(var.team_ids)
+  for_each = var.teams
   team_id  = data.pagerduty_team.team[each.key].id
   user_id  = var.user_id
   role     = "manager"
@@ -12,6 +12,6 @@ resource "pagerduty_team_membership" "team_membership" {
 }
 
 data "pagerduty_team" "team" {
-  for_each = toset(var.team_ids)
+  for_each = var.teams
   name     = each.key
 }

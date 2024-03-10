@@ -1,4 +1,4 @@
-variable "team_ids" {
+variable "teams" {
   type = list(string)
 }
 
