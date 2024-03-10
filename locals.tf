@@ -6,4 +6,8 @@ locals {
       team = ["poc", ],
     },
   }
+
+  teams = [
+    "poc",
+  ]
 }
