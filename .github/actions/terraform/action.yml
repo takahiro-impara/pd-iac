@@ -46,7 +46,5 @@ runs:
         filter_mode: nofilter
         reporter: github-pr-review
 
-    - env: 
-        PD_TOKEN: ${{ secrets.PD_TOKEN }}
-      run: tfcmt ${{ inputs.terraform-command }} -- terraform ${{ inputs.terraform-command }} -var pagerduty_token=$PD_TOKEN -input=false ${{ inputs.terraform-arguments }}
+    - run: tfcmt ${{ inputs.terraform-command }} -- terraform ${{ inputs.terraform-command }} -var pagerduty_token=${{ inputs.pd-token }} -input=false ${{ inputs.terraform-arguments }}
       shell: bash
