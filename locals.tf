@@ -10,4 +10,10 @@ locals {
   teams = [
     "poc",
   ]
+
+  services = {
+    "poc-system" = {
+      associated_team = "poc",
+    }
+  }
 }

@@ -1,5 +1,5 @@
-variable "teams" {
-  type = list(string)
+variable "team_map" {
+  type = map(string)
 }
 
 variable "user_id" {
