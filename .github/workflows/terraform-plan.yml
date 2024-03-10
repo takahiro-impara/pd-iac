@@ -16,7 +16,7 @@
         - uses: actions/checkout@v4
   
         - id: changed-files
-          uses: tj-actions/changed-files@v35
+          uses: tj-actions/changed-files@v42
           with:
             # Note: .github should trigger the CI as to test the CI for Terraform
             files: |
