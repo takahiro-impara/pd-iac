@@ -13,8 +13,8 @@ resource "pagerduty_service" "pd_service" {
 
   alert_grouping_parameters {
     type = "intelligent"
-    config {
-      timeout = 300
-    }
+    # config {
+    #   timeout = 300
+    # }
   }
 }
