@@ -11,6 +11,9 @@ inputs:
   terraform-arguments:
     description: Additional arguments for Terraform command
     required: false
+  pd-token:
+    description: API token for PagerDuty
+    required: true
   terraform-command:
     description: Terraform command
     required: true
@@ -27,7 +30,7 @@ runs:
         role-to-assume: arn:aws:iam::896640906341:role/github-actions
         aws-region: ${{ inputs.aws-region }}
 
-    - uses: hashicorp/setup-terraform@v2
+    - uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: ${{ inputs.terraform-version }}
 
