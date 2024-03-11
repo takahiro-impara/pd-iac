@@ -3,17 +3,21 @@ locals {
     "imparapoc03@gmail.com" = {
       name  = "poc user",
       role  = "admin",
-      teams = ["poc", ],
+      teams = ["poc-pd", "poc-k8s"],
     },
   }
 
   teams = [
-    "poc",
+    "poc-pd",
+    "poc-k8s",
   ]
 
   services = {
-    "poc-system" = {
-      associated_team = "poc",
+    "poc-pd-svc" = {
+      associated_team = "poc-pd",
+    },
+    "poc-pk8s-svc" = {
+      associated_team = "poc-k8s",
     }
   }
 }
