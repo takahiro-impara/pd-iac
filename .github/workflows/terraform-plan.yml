@@ -1,5 +1,5 @@
 ---
-  name: Plan
+  name: Plan Terraform
   
   on:
     pull_request:
