@@ -11,6 +11,9 @@ inputs:
   terraform-arguments:
     description: Additional arguments for Terraform command
     required: false
+  aws-account:
+    description: AWS Acconunt for assuming iam role
+    required: true
   pd-token:
     description: API token for PagerDuty
     required: true
@@ -27,7 +30,7 @@ runs:
   steps:
     - uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: arn:aws:iam::896640906341:role/github-actions
+        role-to-assume: arn:aws:iam::${{ inputs.aws-account }}:role/github-actions
         aws-region: ${{ inputs.aws-region }}
 
     - uses: hashicorp/setup-terraform@v3
