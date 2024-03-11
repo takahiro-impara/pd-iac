@@ -33,3 +33,4 @@
             aws-region: ap-northeast-1
             terraform-command: plan
             pd-token: ${{ secrets.PD_TOKEN }}
+            aws-account: ${{ secrets.AWS_ACCOUNT }}

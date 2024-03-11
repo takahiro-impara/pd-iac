@@ -36,3 +36,4 @@
             terraform-arguments: --auto-approve
             terraform-command: apply
             pd-token: ${{ secrets.PD_TOKEN }}
+            aws-account: ${{ secrets.AWS_ACCOUNT }}
