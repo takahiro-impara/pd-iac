@@ -1,7 +1,7 @@
 locals {
   users = {
     "imparapoc03@gmail.com" = {
-      name  = "poc user",
+      name  = "Elijah Dunleavy",
       role  = "admin",
       teams = ["payment", "order-management"],
     },
