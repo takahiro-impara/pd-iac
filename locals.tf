@@ -3,22 +3,25 @@ locals {
     "imparapoc03@gmail.com" = {
       name  = "Elijah Dunleavy",
       role  = "admin",
-      teams = ["payment", "order-management"],
+      teams = ["cart", "order-management", "bff"],
     },
   }
 
   teams = [
-    "payment",
+    "cart",
     "order-management",
-    "shipping",
+    "bff",
   ]
 
   services = {
-    "poc-payment" = {
-      associated_team = "payment",
+    "cart" = {
+      associated_team = "cart",
     },
-    "poc-order-management" = {
+    "order-management" = {
       associated_team = "order-management",
+    },
+    "bff" = {
+      associated_team = "bff",
     }
   }
 }
