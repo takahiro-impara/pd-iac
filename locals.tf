@@ -3,7 +3,7 @@ locals {
     "imparapoc03@gmail.com" = {
       name  = "Elijah Dunleavy",
       role  = "admin",
-      teams = ["payment", "order-management", "bff"],
+      teams = ["cart", "order-management", "bff"],
     },
   }
 
