@@ -14,4 +14,9 @@ resource "pagerduty_service" "pd_service" {
   alert_grouping_parameters {
     type = "intelligent"
   }
+
+  incident_urgency_rule {
+    type    = "constant"
+    urgency = "severity_based"
+  }
 }
